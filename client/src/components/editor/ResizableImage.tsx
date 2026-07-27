@@ -6,20 +6,8 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import { X, MoveHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-function ResizableImageView(props: {
-  node: {
-    attrs: {
-      src: string;
-      alt: string;
-      width: number | null;
-      float: string; // "left" | "right" | "none"
-    };
-  };
-  selected: boolean;
-  updateAttributes: (attrs: Record<string, unknown>) => void;
-  deleteNode: () => void;
-  editor: { isEditable: boolean };
-}) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function ResizableImageView(props: any) {
   const { src, alt, width, float: floatDir } = props.node.attrs;
   const [imgWidth, setImgWidth] = useState<number>(width || 300);
   const [isResizing, setIsResizing] = useState(false);

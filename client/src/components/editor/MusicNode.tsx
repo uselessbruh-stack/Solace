@@ -16,23 +16,8 @@ function formatTime(sec: number): string {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-function MusicPlayerView(props: {
-  node: {
-    attrs: {
-      videoId: string;
-      title: string;
-      artist: string;
-      thumbnail: string;
-      duration: number;
-      float: string;
-      width: number;
-    };
-  };
-  selected: boolean;
-  updateAttributes: (attrs: Record<string, unknown>) => void;
-  deleteNode: () => void;
-  editor: { isEditable: boolean };
-}) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function MusicPlayerView(props: any) {
   const { videoId, title, artist, duration, float: floatDir, width } = props.node.attrs;
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
